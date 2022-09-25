@@ -1,4 +1,5 @@
 use rdev::{grab, Event, EventType, Key};
+mod render;
 
 fn main() {
     // This will block.
@@ -8,10 +9,9 @@ fn main() {
 }
 
 fn callback(event: Event) -> Option<Event> {
-    println!("My callback {:?}", event);
+    render::render();
     match event.event_type {
         EventType::KeyPress(Key::Tab) => {
-            println!("Cancelling tab !");
             None
         }
         _ => Some(event),
