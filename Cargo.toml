@@ -1,0 +1,7 @@
+[package]
+edition = "2021"
+name = "rust-launcher"
+version = "0.1.0"
+
+[dependencies]
+rdev = {version = "*", features = ["unstable_grab"]}
